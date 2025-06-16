@@ -109,7 +109,7 @@ const variants = [
 					<div
 						{...props}
 						className={cn(
-							'relative select-none rounded-xl bg-main-background px-4 py-5 w-full h-full',
+							'relative select-none rounded-xl bg-[#121212] px-4 py-5 w-full h-full',
 							className
 						)}
 					>

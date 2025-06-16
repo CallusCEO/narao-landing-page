@@ -29,12 +29,13 @@ body {
 
 	--border: oklch(0.26 0 0);
 
-	--primary: #222;
+	--primary: #222222;
 	--secondary: #fffaec;
-	--first-gray: #111;
-	--second-gray: #333;
-	--third-gray: #444;
-	--fourth-gray: #555;
+	--first-gray: #111111;
+	--second-gray: #333333;
+	--third-gray: #444444;
+	--fourth-gray: #555555;
+	--blue: #6666ff;
 }
 
 @theme inline {

@@ -9,6 +9,20 @@
 	align-items: center;
 	padding-left: 24px;
 	padding-right: 24px;
+	position: relative;
+	overflow: hidden;
+}
+
+.container::before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0;
+	right: 0;
+	height: 100%;
+	background: radial-gradient(circle at 50% 30%, rgba(102, 102, 255, 0.1), transparent 50%);
+	z-index: -1;
+	pointer-events: none;
 }
 
 .title {
@@ -20,8 +34,10 @@
 
 .badge {
 	color: var(--secondary);
-	font-size: clamp(12px, 2vw, 14px);
+	font-size: 14px;
 	margin-bottom: 12px;
+	display: flex;
+	align-items: center;
 }
 
 .grid {
@@ -48,6 +64,15 @@
 	font-size: 16px;
 }
 
+.logo {
+	position: absolute;
+	opacity: 0.3;
+	top: 224px;
+	z-index: -1;
+	width: clamp(264px, 50vw, 424px);
+	height: clamp(264px, 50vw, 424px);
+}
+
 @media (max-width: 768px) {
 	.grid {
 		grid-template-columns: 1fr;
@@ -55,10 +80,8 @@
 
 	.button {
 		padding: 8px 16px;
-	}	
-	
+	}
 }
 
 @media (max-width: 480px) {
-
 }

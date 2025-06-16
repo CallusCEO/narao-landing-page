@@ -6,10 +6,13 @@ import { cn } from '@/utils/cn';
 
 type AnimatedTabsProps = {
 	tabs: Array<string>;
+	onTabClick?: (tab: string) => void;
+	activeTab?: string;
 };
 
-export function AnimatedTabs({ tabs }: AnimatedTabsProps) {
-	const [activeTab, setActiveTab] = useState(tabs[0]);
+export function AnimatedTabs({ tabs, onTabClick, activeTab: controlledActiveTab }: AnimatedTabsProps) {
+	const [internalActiveTab, setInternalActiveTab] = useState(tabs[0]);
+	const activeTab = controlledActiveTab ?? internalActiveTab;
 
 	const containerRef = useRef<HTMLDivElement>(null);
 	const activeTabRef = useRef<HTMLButtonElement>(null);
@@ -41,14 +44,17 @@ export function AnimatedTabs({ tabs }: AnimatedTabsProps) {
 				ref={containerRef}
 				className='absolute z-10 w-full overflow-hidden [clip-path:inset(0px_75%_0px_0%_round_17px)] [transition:clip-path_0.25s_ease]'
 			>
-				<div className='relative flex w-full justify-center bg-primary'>
+				<div className='relative flex w-full justify-center bg-[#111111]'>
 					{tabs.map((tab, index) => (
 						<button
 							key={index.toString()}
 							type='button'
-							onClick={() => setActiveTab(tab)}
+							onClick={() => {
+								setInternalActiveTab(tab);
+								if (onTabClick) onTabClick(tab);
+							}}
 							className={cn(
-								'flex h-8 items-center rounded-full p-3 font-medium second-gray text-sm/5.5'
+								'flex h-8 items-center rounded-full p-3 font-medium text-second-gray text-sm/5.5'
 							)}
 							tabIndex={-1}
 						>
@@ -66,7 +72,10 @@ export function AnimatedTabs({ tabs }: AnimatedTabsProps) {
 							key={index.toString()}
 							type='button'
 							ref={isActive ? activeTabRef : null}
-							onClick={() => setActiveTab(tab)}
+							onClick={() => {
+								setInternalActiveTab(tab);
+								if (onTabClick) onTabClick(tab);
+							}}
 							className='flex h-8 items-center rounded-full p-3 font-medium text-primary-muted text-sm/5.5'
 						>
 							{tab}

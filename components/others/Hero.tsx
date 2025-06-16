@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { Clock } from '@deemlol/next-icons';
 
 // customs
 import styles from '@/src/styles/Hero.module.css';
@@ -9,6 +10,7 @@ import { AnimatedTabs } from '../ui/animated-tabs';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
 import { Card } from '../ui/card';
+import Image from 'next/image';
 
 function Hero() {
 	const onPress = () => {};
@@ -16,7 +18,10 @@ function Hero() {
 	return (
 		<div className={styles.container}>
 			<Badge variant='animated-border' className={styles.badge}>
-				Coming soon...
+				<div className='flex items-center gap-2'>
+					<Clock size={20} color={'#6666ff'} />
+					<p>Coming soon...</p>
+				</div>
 			</Badge>
 			<div className={styles.titleContainer}>
 				<Text variant='generate-effect' className={styles.title}>
@@ -25,10 +30,10 @@ function Hero() {
 			</div>
 
 			<div className={styles.buttonsContainer}>
-				<Button variant='glitch-brightness' className={styles.button}>
+				<Button variant='default' className={styles.button}>
 					Learn more
 				</Button>
-				<Button variant='outline' isMagnetic className={styles.button}>
+				<Button variant='glitch-brightness' className={styles.button}>
 					Join the waitlist
 				</Button>
 			</div>
@@ -40,8 +45,8 @@ function Hero() {
 							Note-taking
 						</span>
 						<span className='text-sm leading-[1.5] text-neutral-500 dark:text-neutral-400'>
-							Explore the new website that simplifies the creation
-							of sophisticated components.
+							Explore the new website that simplifies the creation of sophisticated
+							components.
 						</span>
 					</div>
 				</Card>
@@ -52,8 +57,8 @@ function Hero() {
 							To-do List
 						</span>
 						<span className='text-sm leading-[1.5] text-neutral-500 dark:text-neutral-400'>
-							Explore the new website that simplifies the creation
-							of sophisticated components.
+							Explore the new website that simplifies the creation of sophisticated
+							components.
 						</span>
 					</div>
 				</Card>
@@ -64,8 +69,8 @@ function Hero() {
 							Timer
 						</span>
 						<span className='text-sm leading-[1.5] text-neutral-500 dark:text-neutral-400'>
-							Explore the new website that simplifies the creation
-							of sophisticated components.
+							Explore the new website that simplifies the creation of sophisticated
+							components.
 						</span>
 					</div>
 				</Card>
@@ -76,8 +81,8 @@ function Hero() {
 							Android First
 						</span>
 						<span className='text-sm leading-[1.5] text-neutral-500 dark:text-neutral-400'>
-							We chose to launch on Android first, with an Apple
-							version planned post-launch.
+							We chose to launch on Android first, with an Apple version planned
+							post-launch.
 						</span>
 					</div>
 				</Card>
@@ -86,13 +91,10 @@ function Hero() {
 					<div className='flex flex-col gap-2'>
 						<span className='text-xl font-semibold text-black dark:text-neutral-200'>
 							Sober but{' '}
-							<Text className={`${styles.customText} text-xl`}>
-								Customizable
-							</Text>
+							<Text className={`${styles.customText} text-xl`}>Customizable</Text>
 						</span>
 						<span className='text-sm leading-[1.5] text-neutral-500 dark:text-neutral-400'>
-							Love green, purple, blue, or yellow? Customize your
-							workspace with ease!
+							Love green, purple, blue, or yellow? Customize your workspace with ease!
 						</span>
 					</div>
 				</Card>
@@ -107,6 +109,10 @@ function Hero() {
 						</span>
 					</div>
 				</Card>
+			</div>
+
+			<div className={styles.logo}>
+				<Image src='/images/callus-logo-fffaec.png' alt='' fill className={styles.logo} />
 			</div>
 		</div>
 	);
