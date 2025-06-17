@@ -45,12 +45,12 @@
 	justify-content: center;
 	font-family: var(--font-montserrat);
 	color: var(--secondary);
-	padding-top: 264px;
+	padding-top: clamp(164px, 10vw, 264px);
 	align-items: center;
 	padding-left: 24px;
 	padding-right: 24px;
 	position: relative;
-	overflow: hidden;
+	overflow-x: hidden;
 
 	padding-bottom: 64px;
 }
@@ -111,7 +111,7 @@
 .logo {
 	position: absolute;
 	opacity: 0.3;
-	top: 224px;
+	top: clamp(164px, 10vw, 264px);
 	z-index: -1;
 	width: clamp(264px, 50vw, 424px);
 	height: clamp(264px, 50vw, 424px);

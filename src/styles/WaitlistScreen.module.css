@@ -77,7 +77,7 @@
 	padding-left: clamp(16px, 10vw, 124px);
 	padding-right: clamp(16px, 10vw, 124px);
 	position: relative;
-	overflow: hidden;
+	overflow-x: hidden;
 	background-color: rgba(17, 17, 17, 0.516);
 	height: 100dvh;
 }
@@ -357,6 +357,15 @@
 
 @media (max-width: 480px) {
 	.topPart {
-		padding-top: 224px;
+		padding-top: 124px;
+	}
+
+	.container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	.title {
+		font-size: 24px;
 	}
 }

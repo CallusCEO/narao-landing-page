@@ -109,7 +109,7 @@ function AboutScreen() {
 				</div>
 				<div className={styles.questionContainer}>
 					<Text variant='generate-effect' className={styles.questionTitle}>
-						III. What are the coolest features?
+						III. Coolest features?
 					</Text>
 					<Accordion
 						className={styles.accordion}
@@ -126,10 +126,10 @@ function AboutScreen() {
 							</AccordionContent>
 						</AccordionItem>
 						<AccordionItem value='item-2'>
-							<AccordionTrigger>
+							<AccordionTrigger className='text-left'>
 								Isn&#39;t there a risk of forgetting notes?
 							</AccordionTrigger>
-							<AccordionContent>
+							<AccordionContent className='text-left'>
 								No. With a TikTok-style scrolling features, you will be able to see
 								the notes you&#39;ve wrote 2 years ago!
 							</AccordionContent>
