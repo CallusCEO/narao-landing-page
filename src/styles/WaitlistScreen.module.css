@@ -1,0 +1,325 @@
+@keyframes enter {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@keyframes enter-logo {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 0.3;
+        filter: blur(0px);
+    }
+}
+
+@keyframes text-color {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes hue-rotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(180deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.container {
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: var(--font-montserrat);
+    color: var(--secondary);
+    align-items: center;
+    padding-left: clamp(16px, 10vw, 124px);
+    padding-right: clamp(16px, 10vw, 124px);
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(17, 17, 17, 0.516);
+    height: 100dvh;
+}
+
+.topPart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.516);
+    width: 100%;
+    padding-top: 164px;
+    padding-bottom: clamp(48px, 5vw, 64px);
+    border-radius: clamp(20px, 5vw, 64px);
+
+    outline: 2px solid var(--fourth-gray);
+    outline-offset: 2px;
+}
+
+.title {
+    color: var(--secondary);
+    font-size: clamp(32px, 5vw, 48px);
+    overflow-wrap: break-word;
+    text-align: center;
+    font-weight: 600;
+}
+
+.badge {
+    color: var(--secondary);
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation: enter ease 1s forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.buttonsContainer {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+}
+
+.button {
+    margin-top: 16px;
+    padding: 8px 32px;
+    font-size: 16px;
+    animation: enter ease 1s forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+
+    display: flex;
+    gap: 4px;
+}
+
+.logo {
+    position: absolute;
+    opacity: 0.3;
+    top: 224px;
+    z-index: -1;
+    width: clamp(264px, 50vw, 424px);
+    height: clamp(264px, 50vw, 424px);
+    animation: enter-logo ease 2s forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+.bottomPart {
+    width: 100%;
+    padding: 32px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.invalidEmail {
+    color: #ff6666;
+}
+
+.validEmail {
+    color: #66ff66;
+}
+
+.input {
+    width: clamp(264px, 80%, 464px);
+    min-height: 40px;
+    height: auto;
+    background-color: rgba(45, 45, 45, 0.516);
+    border-radius: 10px;
+    border: 1px solid var(--fourth-gray);
+    font-family: inherit;
+
+    opacity: 0;
+    animation: ease enter 1s forwards;
+    animation-delay: 0.6s;
+}
+
+.untouchable {
+    pointer-events: none;
+}
+
+.infoMessage {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.loadingContainer {
+    animation: enter 1s ease;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 80%;
+    max-width: 464px;
+    min-height: 128px;
+    background-color: rgba(34, 34, 34, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: #222 1px solid;
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.message {
+    padding: 8px 0px;
+    width: fit-content;
+    font-family: var(--font-montserrat);
+    letter-spacing: 2px;
+    text-align: center;
+    background-image: linear-gradient(55deg, #6fc2fa, #00bbff, #91c7fa);
+    background-size: 300%;
+    animation: text-color 3s ease alternate infinite, hue-rotate 5s ease infinite;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.messageError {
+    animation: none;
+    background-clip: none;
+    background-image: none;
+    font-size: 20px;
+    background-color: #ff6666;
+    font-weight: 600;
+    padding: 8px 0px;
+}
+
+
+.messageAlt {
+    margin-bottom: 16px;
+    padding: 0px 0px;
+    width: fit-content;
+    color: var(--fourth-gray);
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+}
+
+.messageLoading {
+    width: fit-content;
+    color: var(--secondary);
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.loadingCircle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-image: linear-gradient(55deg, #6fc2fa, #00bbff, #91c7fa);
+    background-size: 300%;
+    animation: text-color 3s ease alternate infinite, hue-rotate 5s ease infinite;
+    margin-bottom: 8px;
+    position: relative;
+    transition: filter 1s;
+    z-index: 0;
+}
+
+.loadingCircle::before {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(102, 102, 102, 0.3);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    animation: scale 2s ease infinite;
+}
+
+.buttonLoading {
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linksContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 64px;
+    max-width: 564px;
+}
+
+.linkContainer {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.link {
+    cursor: pointer;
+    color: var(--fourth-gray);
+}
+
+
+@media (max-width: 768px) {
+
+    .button {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topPart {
+        padding-top: 224px;
+    }
+}

@@ -1,12 +1,12 @@
 // custom imports
-import Hero from '@/components/others/Hero';
+import AboutScreen from '@/components/others/AboutScreen';
 import Navbar from '@/components/others/Navbar';
 
 export default function About() {
 	return (
 		<div className='overflow-hidden'>
 			<Navbar />
-			<Hero />
+			<AboutScreen />
 		</div>
 	);
 }

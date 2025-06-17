@@ -1,3 +1,31 @@
+@keyframes enter {
+	from {
+		transform: translateY(20px);
+		opacity: 0;
+		filter: blur(10px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+		filter: blur(0px);
+	}
+}
+
+@keyframes enter-logo {
+	from {
+		transform: translateY(50px);
+		opacity: 0;
+		filter: blur(10px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 0.3;
+		filter: blur(0px);
+	}
+}
+
 .container {
 	width: 100dvw;
 	display: flex;
@@ -11,12 +39,14 @@
 	padding-right: 24px;
 	position: relative;
 	overflow: hidden;
+
+	padding-bottom: 64px;
 }
 
 .container::before {
 	content: '';
 	position: absolute;
-	top: 0px;
+	top: -20%;
 	left: 0;
 	right: 0;
 	height: 100%;
@@ -28,8 +58,11 @@
 .title {
 	color: var(--secondary);
 	font-size: clamp(32px, 5vw, 48px);
-	word-wrap: normal;
-	flex-wrap: wrap;
+	overflow-wrap: break-word;
+	text-align: center;
+	font-weight: 600;
+	animation: enter ease 1s forwards;
+	opacity: 0;
 }
 
 .badge {
@@ -38,6 +71,9 @@
 	margin-bottom: 12px;
 	display: flex;
 	align-items: center;
+	animation: enter ease 1s forwards;
+	animation-delay: 0.2s;
+	opacity: 0;
 }
 
 .grid {
@@ -62,6 +98,9 @@
 .button {
 	padding: 8px 32px;
 	font-size: 16px;
+	animation: enter ease 1s forwards;
+	animation-delay: 0.4s;
+	opacity: 0;
 }
 
 .logo {
@@ -71,6 +110,38 @@
 	z-index: -1;
 	width: clamp(264px, 50vw, 424px);
 	height: clamp(264px, 50vw, 424px);
+	animation: enter-logo ease 2s forwards;
+	animation-delay: 0.6s;
+	opacity: 0;
+}
+
+.card {
+	animation: enter ease 1s forwards;
+	opacity: 0;
+}
+
+.grid .card:nth-child(1) {
+	animation-delay: 0s;
+}
+
+.grid .card:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+.grid .card:nth-child(3) {
+	animation-delay: 0.4s;
+}
+
+.grid .card:nth-child(4) {
+	animation-delay: 0.6s;
+}
+
+.grid .card:nth-child(5) {
+	animation-delay: 0.8s;
+}
+
+.grid .card:nth-child(6) {
+	animation-delay: 1.0s;
 }
 
 @media (max-width: 768px) {
@@ -81,7 +152,4 @@
 	.button {
 		padding: 8px 16px;
 	}
-}
-
-@media (max-width: 480px) {
 }

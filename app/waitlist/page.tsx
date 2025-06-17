@@ -1,12 +1,12 @@
 // custom imports
-import Hero from '@/components/others/Hero';
+import WaitlistScreen from '@/components/others/WaitlistScreen';
 import Navbar from '@/components/others/Navbar';
 
 export default function Waitlist() {
 	return (
 		<div className='overflow-hidden'>
 			<Navbar />
-			<Hero />
+			<WaitlistScreen />
 		</div>
 	);
 }

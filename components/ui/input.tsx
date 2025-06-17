@@ -33,8 +33,8 @@ export function Input({
   return (
     <div
       className={cn(
-        "relative inline-flex h-11 w-64 items-center overflow-hidden rounded-xl border border-border bg-main-secondary shadow-xs transition-colors ease-out focus-within:border-primary data-[filled=true]:border-border",
-        "has-disabled:opacity-80 has-disabled:*:cursor-not-allowed",
+        "relative inline-flex h-11 w-64 items-center overflow-hidden rounded-xl border border-border bg-[#222222] shadow-xs transition-colors ease-out focus-within:border-[#fffaec] data-[filled=true]:border-[#fffaec]",
+        "has-disabled:opacity-80 ",
         className,
       )}
       data-filled={fieldState === "filled"}
@@ -42,9 +42,14 @@ export function Input({
       <input
         {...props}
         className={cn(
-          "peer h-full flex-1 bg-transparent px-3 py-2 caret-primary outline-none placeholder:sr-only",
-          "font-normal font-sans text-primary-foreground text-sm/5.5 ",
+          "peer h-full flex-1 bg-transparent px-3 py-2 outline-none placeholder:sr-only",
+          "font-normal font-sans text-sm/5.5"
         )}
+        style={{
+          color: 'white',
+          caretColor: 'white',
+          WebkitTextFillColor: 'white'
+        }}
         placeholder={placeholder}
         onChange={(event) => {
           setFieldState(event.target.value.length > 0 ? "filled" : "idle");

@@ -24,9 +24,7 @@ function Hero() {
 				</div>
 			</Badge>
 			<div className={styles.titleContainer}>
-				<Text variant='generate-effect' className={styles.title}>
-					When Writing Becomes Learning
-				</Text>
+				<p className={styles.title}>When Writing Becomes Learning</p>
 			</div>
 
 			<div className={styles.buttonsContainer}>

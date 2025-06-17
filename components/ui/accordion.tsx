@@ -16,7 +16,7 @@ export function AccordionItem({
     <RadixAccordion.Item
       value={value}
       className={cn(
-        "mt-px w-full overflow-hidden border-border border-b last:border-none focus-within:relative focus-within:z-10",
+        "mt-px w-full overflow-hidden border-[#444444] border-b last:border-none focus-within:relative focus-within:z-10",
         className,
       )}
       {...props}
@@ -39,7 +39,7 @@ export function AccordionTrigger({
     <RadixAccordion.Header className="flex">
       <RadixAccordion.Trigger
         className={cn(
-          "group flex h-11 w-full items-center justify-between px-3.5 text-base/none text-primary outline-none",
+          "group flex h-11 w-full items-center justify-between px-3.5 text-base/none text-[#fffaec] outline-none",
           "motion-safe:ease-out [&[data-state=open]>svg]:rotate-45",
           className,
         )}
