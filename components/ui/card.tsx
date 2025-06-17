@@ -83,7 +83,7 @@ const variants = [
 	},
 	{
 		variant: 'revealed-pointer',
-		component: ({ children, className, ...props }) => {
+		component: function RevealedPointerComponent({ children, className, ...props }) {
 			const mouseX = useMotionValue(0);
 			const mouseY = useMotionValue(0);
 

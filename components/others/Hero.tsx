@@ -2,18 +2,26 @@
 
 import React from 'react';
 import { Clock } from '@deemlol/next-icons';
+import { useRouter } from 'next/navigation';
 
 // customs
 import styles from '@/src/styles/Hero.module.css';
 import { Text } from '../ui/text';
-import { AnimatedTabs } from '../ui/animated-tabs';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
 import { Card } from '../ui/card';
 import Image from 'next/image';
 
 function Hero() {
-	const onPress = () => {};
+	const router = useRouter();
+
+	const onPressWaitlist = () => {
+		router.push('/waitlist');
+	};
+
+	const onPressLearnMore = () => {
+		router.push('/about');
+	};
 
 	return (
 		<div className={styles.container}>
@@ -28,10 +36,14 @@ function Hero() {
 			</div>
 
 			<div className={styles.buttonsContainer}>
-				<Button variant='default' className={styles.button}>
+				<Button variant='default' className={styles.button} onClick={onPressLearnMore}>
 					Learn more
 				</Button>
-				<Button variant='glitch-brightness' className={styles.button}>
+				<Button
+					variant='glitch-brightness'
+					className={styles.button}
+					onClick={onPressWaitlist}
+				>
 					Join the waitlist
 				</Button>
 			</div>
@@ -112,6 +124,10 @@ function Hero() {
 			<div className={styles.logo}>
 				<Image src='/images/callus-logo-fffaec.png' alt='' fill className={styles.logo} />
 			</div>
+
+			<div className={styles.lightOne}></div>
+			<div className={styles.lightTwo}></div>
+			<div className={styles.lightThree}></div>
 		</div>
 	);
 }

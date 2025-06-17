@@ -1,187 +1,234 @@
 @keyframes enter {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-        filter: blur(10px);
-    }
+	from {
+		transform: translateY(20px);
+		opacity: 0;
+		filter: blur(10px);
+	}
 
-    to {
-        transform: translateY(0);
-        opacity: 1;
-        filter: blur(0px);
-    }
+	to {
+		transform: translateY(0);
+		opacity: 1;
+		filter: blur(0px);
+	}
 }
 
-
 @keyframes text-color {
-    0% {
-        background-position: 0%;
-    }
+	0% {
+		background-position: 0%;
+	}
 
-    50% {
-        background-position: 100%;
-    }
+	50% {
+		background-position: 100%;
+	}
 
-    100% {
-        background-position: 0%;
-    }
+	100% {
+		background-position: 0%;
+	}
 }
 
 @keyframes hue-rotate {
-    0% {
-        filter: hue-rotate(0deg);
-    }
+	0% {
+		filter: hue-rotate(0deg);
+	}
 
-    50% {
-        filter: hue-rotate(180deg);
-    }
+	50% {
+		filter: hue-rotate(180deg);
+	}
 
-    100% {
-        filter: hue-rotate(360deg);
-    }
+	100% {
+		filter: hue-rotate(360deg);
+	}
 }
 
 @keyframes float {
+	0%,
+	100% {
+		transform: translate(-50%, -50%) translateY(0);
+	}
 
-    0%,
-    100% {
-        transform: translate(-50%, -50%) translateY(0);
-    }
-
-    50% {
-        transform: translate(-50%, -50%) translateY(-20px);
-    }
+	50% {
+		transform: translate(-50%, -50%) translateY(-20px);
+	}
 }
 
 @keyframes float-arrow {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
+	50% {
+		transform: translateY(-20px);
+	}
 }
 
 .container {
-    width: 100dvw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: var(--font-montserrat);
-    color: var(--secondary);
-    padding-top: 120px;
-    align-items: center;
-    padding-left: 24px;
-    padding-right: 24px;
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 64px;
-    background: rgba(0, 0, 0, 0.1);
+	width: 100dvw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-family: var(--font-montserrat);
+	color: var(--secondary);
+	padding-top: 120px;
+	align-items: center;
+	padding-left: 24px;
+	padding-right: 24px;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 64px;
+	background: rgba(0, 0, 0, 0.1);
 }
 
 .title {
-    font-size: clamp(42px, 5vw, 48px);
-    overflow-wrap: break-word;
-    text-align: center;
-    font-weight: 600;
-    background-image: linear-gradient(55deg, #6fc2fa, #00bbff, #91c7fa);
-    background-size: 300%;
-    animation: text-color 3s ease alternate infinite, hue-rotate 5s ease infinite;
-    background-clip: text;
-    color: transparent;
-    position: relative;
-    z-index: 1;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	font-size: clamp(42px, 6vw, 64px);
+	overflow-wrap: break-word;
+	text-align: center;
+	font-weight: 600;
+	background-image: linear-gradient(55deg, #6fc2fa, #00bbff, #91c7fa);
+	background-size: 300%;
+	animation: text-color 3s ease alternate infinite, hue-rotate 5s ease infinite;
+	background-clip: text;
+	color: transparent;
+	position: relative;
+	z-index: 1;
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
-    margin-top: 124px;
+	margin-top: 124px;
 }
-
-/* .buttonsContainer {
-    margin-top: 32px;
-    display: flex;
-    gap: 16px;
-}
-
-.button {
-    padding: 8px 32px;
-    font-size: 16px;
-    animation: enter ease 1s forwards;
-    animation-delay: 0.4s;
-    opacity: 0;
-} */
 
 .text {
-    font-size: clamp(16px, 3vw, 20px);
-    color: #999999;
+	font-size: clamp(16px, 3vw, 20px);
+	color: #999999;
 }
 
 .lightOne {
-    position: absolute;
-    top: 124px;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle at center, rgba(242, 255, 102, 0.2), transparent 70%);
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0.7;
-    animation: float 6s ease-in-out infinite;
+	position: absolute;
+	top: 124px;
+	left: 60%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	height: 300px;
+	background: radial-gradient(circle at center, rgba(242, 255, 102, 0.2), transparent 70%);
+	z-index: -1;
+	pointer-events: none;
+	opacity: 0.7;
+	animation: float 6s ease-in-out infinite;
 }
 
 .lightTwo {
-    position: absolute;
-    top: 464px;
-    left: 70%;
-    transform: translate(-50%, -50%);
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle at center, rgba(102, 255, 168, 0.15), transparent 70%);
-    z-index: -2;
-    pointer-events: none;
-    opacity: 0.7;
-    animation: float 8s ease-in-out infinite reverse;
+	position: absolute;
+	top: 464px;
+	left: 70%;
+	transform: translate(-50%, -50%);
+	width: 450px;
+	height: 450px;
+	background: radial-gradient(circle at center, rgba(102, 255, 168, 0.15), transparent 70%);
+	z-index: -2;
+	pointer-events: none;
+	opacity: 0.7;
+	animation: float 8s ease-in-out infinite reverse;
 }
 
 .lightThree {
-    position: absolute;
-    top: 364px;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle at center, rgba(102, 102, 255, 0.1), transparent 70%);
-    z-index: -3;
-    pointer-events: none;
-    opacity: 0.7;
-    animation: float 10s ease-in-out infinite;
+	position: absolute;
+	top: 60%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	height: 600px;
+	background: radial-gradient(circle at center, rgba(255, 102, 102, 0.1), transparent 70%);
+	z-index: -3;
+	pointer-events: none;
+	opacity: 0.7;
+	animation: float 10s ease-in-out infinite;
+}
+
+.lightFour {
+	position: absolute;
+	top: 80%;
+	left: 70%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	height: 600px;
+	background: radial-gradient(circle at center, rgba(102, 102, 255, 0.1), transparent 70%);
+	z-index: -3;
+	pointer-events: none;
+	opacity: 0.7;
+	animation: float 10s ease-in-out infinite;
+}
+
+.lightFive {
+	position: absolute;
+	top: 364px;
+	left: 30%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	height: 600px;
+	background: radial-gradient(circle at center, rgba(102, 102, 255, 0.1), transparent 70%);
+	z-index: -3;
+	pointer-events: none;
+	opacity: 0.7;
+	animation: float 10s ease-in-out infinite;
 }
 
 .arrowDown {
-    pointer-events: none;
-    animation: float-arrow 3s ease-in-out infinite;
-    margin-top: 10dvh;
+	pointer-events: none;
+	animation: float-arrow 3s ease-in-out infinite;
+	margin-top: 10dvh;
 }
 
 .accordion {
-    margin-top: 16px;
-    width: clamp(364px, 80vw, 564px)
+	margin-top: 16px;
+	width: clamp(364px, 80vw, 564px);
 }
 
 .questionsSection {
-    margin-top: 50dvh;
-    display: flex;
-    flex-direction: center;
-    align-items: center;
+	margin-top: 50dvh;
+	display: flex;
+	flex-direction: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.questionContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-bottom: 124px;
+}
+
+.questionTitle {
+	font-size: clamp(24px, 4vw, 32px);
+	font-weight: 600;
+	text-align: left;
+	color: var(--secondary);
+}
+
+.button {
+	margin-top: 64px;
+}
+
+.linksContainer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	max-width: 564px;
+}
+
+.linkContainer {
+	display: flex;
+	gap: 2px;
+	align-items: center;
+}
+
+.link {
+	cursor: pointer;
+	color: var(--fourth-gray);
 }
 
 @media (max-width: 768px) {
-
-    .button {
-        padding: 8px 16px;
-    }
+	.button {
+		padding: 8px 16px;
+	}
 }
