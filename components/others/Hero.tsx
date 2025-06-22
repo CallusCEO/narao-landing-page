@@ -33,6 +33,9 @@ function Hero() {
 			</Badge>
 			<div className={styles.titleContainer}>
 				<p className={styles.title}>When Writing Becomes Learning</p>
+				<Text variant='generate-effect' className={styles.subTitle}>
+					An intelligent note-taking app
+				</Text>
 			</div>
 
 			<div className={styles.buttonsContainer}>

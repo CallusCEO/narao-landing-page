@@ -82,6 +82,22 @@
 	height: 100dvh;
 }
 
+.container::-webkit-scrollbar {
+	width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+	background: #262626;
+}
+
+.container::-webkit-scrollbar-thumb {
+	background: var(--fourth-gray);
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+	background: #669;
+}
+
 .topPart {
 	display: flex;
 	flex-direction: column;
@@ -90,7 +106,7 @@
 	width: 100%;
 	padding-top: 164px;
 	padding-bottom: clamp(48px, 5vw, 64px);
-	border-radius: clamp(20px, 5vw, 64px);
+	border-radius: 0 0 clamp(20px, 5vw, 64px) clamp(20px, 5vw, 64px);
 
 	outline: 2px solid var(--fourth-gray);
 	outline-offset: 2px;

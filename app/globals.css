@@ -12,6 +12,24 @@ body {
 	background: var(--primary);
 	color: var(--secondary);
 	font-family: Arial, Helvetica, sans-serif;
+	overflow-x: hidden;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #262626;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--fourth-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #669;
 }
 
 :root {
@@ -69,6 +87,7 @@ body {
 		from {
 			height: 0;
 		}
+
 		to {
 			height: var(--radix-accordion-content-height);
 		}
@@ -78,6 +97,7 @@ body {
 		from {
 			height: var(--radix-accordion-content-height);
 		}
+
 		to {
 			height: 0;
 		}
@@ -87,6 +107,7 @@ body {
 		from {
 			background-position: 0 0;
 		}
+
 		to {
 			background-position: -400% 0;
 		}
@@ -97,6 +118,7 @@ body {
 			width: 10px;
 			opacity: 0;
 		}
+
 		to {
 			width: 100px;
 			opacity: 1;
@@ -113,15 +135,19 @@ body {
 		15% {
 			transform: translateX(5px);
 		}
+
 		30% {
 			transform: translateX(-5px);
 		}
+
 		50% {
 			transform: translateX(3px);
 		}
+
 		80% {
 			transform: translateX(2px);
 		}
+
 		100% {
 			transform: translateX(0);
 		}
@@ -131,6 +157,7 @@ body {
 		from {
 			transform: translateY(0);
 		}
+
 		to {
 			transform: translateY(-100%);
 		}
@@ -140,6 +167,7 @@ body {
 		from {
 			transform: translateY(100%);
 		}
+
 		to {
 			transform: translateY(0);
 		}
@@ -149,6 +177,7 @@ body {
 		0% {
 			transform: skew(-13deg) translateX(-100%);
 		}
+
 		100% {
 			transform: skew(-13deg) translateX(100%);
 		}
@@ -158,6 +187,7 @@ body {
 		0% {
 			opacity: 1;
 		}
+
 		100% {
 			opacity: 0.15;
 		}
@@ -168,14 +198,17 @@ body {
 			transform: scaleX(0);
 			transform-origin: bottom left;
 		}
+
 		25% {
 			transform: scaleX(1);
 			transform-origin: bottom left;
 		}
+
 		75% {
 			transform: scaleX(1);
 			transform-origin: bottom right;
 		}
+
 		100% {
 			transform: scaleX(0);
 			transform-origin: bottom right;

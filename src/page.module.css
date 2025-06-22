@@ -1,0 +1,15 @@
+.containerPage::-webkit-scrollbar {
+    width: 8px;
+}
+
+.containerPage::-webkit-scrollbar-track {
+    background: #262626;
+}
+
+.containerPage::-webkit-scrollbar-thumb {
+    background: var(--fourth-gray);
+}
+
+.containerPage {
+    overflow: hidden;
+}

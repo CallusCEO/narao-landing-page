@@ -8,6 +8,7 @@
 	border-style: dashed;
 	width: 100vw;
 	font-family: var(--font-montserrat);
+	-webkit-backdrop-filter: blur(20px);
 	backdrop-filter: blur(20px);
 	z-index: 999;
 }
